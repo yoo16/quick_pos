@@ -1,7 +1,7 @@
 <?php
 require_once "app.php";
 
-$message = "レジを入力してください";
+$message = "QRコードを読み込むか商品コードを入力してください";
 if (isset($_SESSION['message'])) {
     $message = $_SESSION['message'];
     unset($_SESSION['message']);
@@ -19,7 +19,7 @@ if (isset($_SESSION['message'])) {
     <main class="flex">
         <div class="w-1/3">
             <?php include COMPONENT_DIR . 'QR.php' ?>
-            <?php include COMPONENT_DIR . 'Register.php' ?>
+            <?php include COMPONENT_DIR . 'CodeRegister.php' ?>
         </div>
         <div class="w-2/3">
             <?php include COMPONENT_DIR . 'SalesRecord.php' ?>

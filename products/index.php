@@ -24,6 +24,7 @@ $products = $productService->get();
                     <th class="border px-4 py-2">コード</th>
                     <th class="border px-4 py-2">商品名</th>
                     <th class="border px-4 py-2">価格</th>
+                    <th class="border px-4 py-2">QR</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,6 +34,7 @@ $products = $productService->get();
                         <td class="border px-4 py-2"><?= htmlspecialchars($product->code) ?></td>
                         <td class="border px-4 py-2"><?= htmlspecialchars($product->name) ?></td>
                         <td class="border px-4 py-2"><?= number_format($product->price) ?></td>
+                        <td class="border px-4 py-2"><a href="<?= $product->getQrCodePath() ?>" target="_blank"><img src="<?= $product->getQrCodePath() ?>" class="w-12" /></a></td>
                     </tr>
                 <?php endforeach; ?>
             </tbody>

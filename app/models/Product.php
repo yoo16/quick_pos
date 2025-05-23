@@ -22,4 +22,10 @@ class Product
         return new self($row);
     }
 
+    // QRコード画像のパスを返す
+    public function getQrCodePath(): string
+    {
+        return "qr/products/{$this->code}.png";
+    }
+
 }
